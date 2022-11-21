@@ -1,0 +1,116 @@
+//Variables
+// 1) Local
+pragma solidity 0.8.7;
+contract SolidityTest {
+   function getResult() public view returns(uint){
+      uint a = 1;
+      uint b = 2;
+      uint result = a + b;
+      return result;
+   }
+}
+ 
+// 2) Global
+pragma solidity >=0.5.0 < 0.9.0;
+contract GlobalDemo{
+    function getter() public view returns(uint block_no, uint timestamp, address sender) {
+        return(block.number,block.timestamp,msg.sender);
+    }
+}
+//Operators
+ 
+pragma solidity >=0.5.0 < 0.9.0;
+contract OperatorDemo {
+ 
+    uint public num1 = 21;
+    uint public num2 = 9;
+ 
+    // Arthimetic operator
+    uint public sum = num1 + num2;
+    uint public diff = num1 - num2;
+    uint public product = num1 * num2;
+    uint public divison = num1 / num2;
+    uint public increment = ++num1;
+    uint public decrement = --num2;
+ 
+    // relation operator
+    bool public greater = 9 > 6 ;
+    bool public lesser = 9 < 6;
+    bool public greaterEqual = 9 >= 6;
+    bool public lesserEqual = 9 <= 6;
+    bool public equal = 9 == 9;
+    bool public notEqual = 9 != 6;
+ 
+    function logic( bool a, bool b) public view returns (bool, bool, bool) {
+ 
+        //And
+        bool and = a&&b;
+ 
+        //OR
+        bool or = a||b;
+ 
+        //Not
+        bool not = !a;
+ 
+        return(and,or,not);
+    }
+}
+ 
+//Loops
+pragma solidity >=0.5.0 < 0.9.0;
+contract LoopsDemo {
+    uint public count;
+    uint[3] public arr;
+    function loop() public {
+        // while loop
+        while( count < arr.length) {
+            arr[count] = count;
+            count++;
+        }
+ 
+        // for loop
+        for( uint i; i < arr.length; i++) {
+            arr[i] = i;
+        }
+ 
+        // do-while
+        do{
+            arr[count] = count;
+            count++;
+        } while(count < arr.length);
+    }
+}
+ 
+//Decision making
+ 
+pragma solidity >=0.5.0 < 0.9.0;
+ 
+contract ConditionalOperatorDemo {
+    function conditionOperation(uint a, uint b) public pure returns(string memory){
+ 
+    string memory result;
+        result = (a>b) ? "a is greater" : "b is greater";
+ 
+        //if statement
+        if (a > b) {
+            return true;
+        }
+ 
+        //if-else
+        if (a > b) {
+            return "a is greater";
+        } else {
+            return "b is greater";
+        }
+ 
+        // if-elseif-else
+        if (a > b) {
+            result =  "a is greater";
+        } else if (b > a) {
+            result = "b is greater";
+        } else {
+            result = "both are equal";
+        }
+        return result;
+    }
+}

@@ -1,0 +1,86 @@
+//Arrays
+pragma solidity >=0.5.0 < 0.9.0;
+ 
+contract Arraydemo{
+    uint[4] public arr = [10,20,30,40];
+ 
+    function setter(uint index, uint value) public {
+        arr[index] = value;
+    }
+ 
+    function length() public view returns(uint) {
+        return arr.length;
+    }
+}
+ 
+//mapping
+pragma solidity >=0.5.0 < 0.9.0;
+ 
+contract MappingDemo {
+ 
+    mapping(uint => string) public roll_no;
+ 
+    function setter( uint keys, string memory value) public{
+        roll_no[keys] = value;
+    }
+}
+ 
+//String
+pragma solidity >=0.5.0 < 0.9.0;
+ 
+contract SolidityStringTest {
+    string public result;
+    function getStringResult() public returns(string memory){
+        result = "xyz";
+        return result;
+   }
+}
+ 
+//Structure
+pragma solidity >=0.5.0 < 0.9.0;
+ 
+contract structureDemo{
+ 
+    struct student {
+        uint roll;
+        string name;
+    }
+ 
+    student public s1;
+ 
+    constructor (uint _roll, string memory _name) public{
+        s1.roll = _roll;
+        s1.name = _name;
+    }
+ 
+    function change (uint _roll, string memory _name) public {
+        student memory new_s1 = student({roll: _roll, name: _name});
+        s1 = new_s1;
+    }
+}
+ 
+//enums
+pragma solidity >=0.5.0 < 0.9.0;
+ 
+contract enumsDemo {
+ 
+    enum fruits {apple,mango,orange,grapes,melon}
+ 
+    fruits fruit;
+ 
+    fruits favourite;
+ 
+    fruits constant default_value = fruits.apple;
+ 
+    function set_value() public {
+        favourite = fruits.mango;
+    }
+ 
+    function get_value() public view returns(fruits) {
+        return favourite;
+    }
+ 
+    function getDefaultValue() public view returns(fruits) {
+        return default_value;
+    }
+}

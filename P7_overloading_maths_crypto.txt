@@ -1,0 +1,37 @@
+//Function Overloading 
+pragma solidity >=0.7.0<0.9.0;
+contract overloading{
+ 
+function getSum(uint a, uint b)public pure returns(uint){
+    return a+b;
+}
+ 
+function getSum(uint a, uint b, uint c)public pure returns(uint){
+    return a+b+c;
+}
+}
+
+
+//Mathematical Functions
+pragma solidity >=0.7.0<0.9.0;
+ 
+contract maths{
+    function callAddMod() public pure returns(uint){
+        return addmod(4,5,3);
+    }
+    function callMulMod() public pure returns(uint){
+        return mulmod(4,5,3);
+    }
+ 
+}
+
+
+//Cryptographic Functions
+pragma solidity >=0.7.0<0.9.0;
+ 
+contract cryp{
+ 
+function callKeccak256() public pure returns (bytes32 result){
+    return keccak256("ABC");
+}
+}
